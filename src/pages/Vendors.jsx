@@ -10,17 +10,17 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
   const [sortBy, setSortBy] = useState('popular'); // 'popular', 'rating', 'price-low', 'price-high'
   const [filteredVendors, setFilteredVendors] = useState(allVendors);
 
-  const locations = ['All Locations', 'Udaipur', 'Jaipur', 'Mumbai', 'Delhi NCR', 'Bangalore', 'Goa'];
+  const locations = ['All Locations', 'Bhubaneswar', 'Udaipur', 'Jaipur', 'Mumbai', 'Delhi NCR', 'Bangalore', 'Goa'];
   const categories = [
     'All Categories',
-    'Wedding Venues',
+    'Event Venues',
     'Photographers',
     'Makeup Artists',
-    'Wedding Planners',
+    'Event Planners',
     'Decorators',
-    'Mehendi Artists',
+    'Entertainment & DJs',
     'Caterers',
-    'Bridal Wear',
+    'Formal & Party Wear',
     'Invitation Designers'
   ];
 
@@ -105,7 +105,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
             Vendor Directory
           </h1>
           <p className="text-stone-500 font-light text-sm md:text-base">
-            Browse through hundreds of curated, vetted wedding services. Filter by budget, city, or ratings.
+            Browse through hundreds of curated, vetted event services. Filter by budget, city, or ratings.
           </p>
         </div>
 
@@ -116,11 +116,11 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
           <div className="bg-white rounded-3xl p-6 border border-stone-200/80 shadow-sm space-y-6 text-left">
             <div className="flex items-center justify-between pb-4 border-b border-stone-150">
               <span className="font-serif font-bold text-stone-800 text-lg flex items-center">
-                <FiSliders className="mr-2 text-burgundy" /> Filters
+                <FiSliders className="mr-2 text-event-pink" /> Filters
               </span>
               <button
                 onClick={handleClearAll}
-                className="text-xs text-rose-gold hover:text-burgundy font-bold hover:underline cursor-pointer"
+                className="text-xs text-event-pink hover:text-event-orange font-bold hover:underline cursor-pointer"
               >
                 Clear All
               </button>
@@ -132,7 +132,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
               <select
                 value={selectedLocation || 'All Locations'}
                 onChange={(e) => onSelectLocation(e.target.value === 'All Locations' ? '' : e.target.value)}
-                className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-sm focus:border-rose-gold outline-none cursor-pointer font-medium"
+                className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-sm focus:border-event-pink outline-none cursor-pointer font-medium"
               >
                 {locations.map(loc => (
                   <option key={loc} value={loc}>{loc}</option>
@@ -146,7 +146,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
               <select
                 value={selectedCategory || 'All Categories'}
                 onChange={(e) => onSelectCategory(e.target.value === 'All Categories' ? '' : e.target.value)}
-                className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-sm focus:border-rose-gold outline-none cursor-pointer font-medium"
+                className="w-full px-3 py-2 bg-stone-50 border border-stone-200 rounded-xl text-sm focus:border-event-pink outline-none cursor-pointer font-medium"
               >
                 {categories.map(cat => (
                   <option key={cat} value={cat}>{cat}</option>
@@ -158,7 +158,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
             <div>
               <div className="flex justify-between items-center mb-2">
                 <label className="text-[10px] uppercase font-bold text-stone-500 tracking-wider">Max Starting Price</label>
-                <span className="text-xs text-burgundy font-bold">{formatCurrency(priceLimit)}</span>
+                <span className="text-xs text-event-pink font-bold">{formatCurrency(priceLimit)}</span>
               </div>
               <input
                 type="range"
@@ -167,7 +167,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                 step={25000}
                 value={priceLimit}
                 onChange={(e) => setPriceLimit(Number(e.target.value))}
-                className="w-full accent-burgundy cursor-pointer"
+                className="w-full accent-event-pink cursor-pointer"
               />
               <div className="flex justify-between text-[9px] text-stone-400 font-bold mt-1 uppercase">
                 <span>₹50K</span>
@@ -182,7 +182,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                 id="verifiedCheck"
                 checked={onlyVerified}
                 onChange={(e) => setOnlyVerified(e.target.checked)}
-                className="w-4.5 h-4.5 rounded text-burgundy accent-burgundy border-stone-300 focus:ring-burgundy cursor-pointer"
+                className="w-4.5 h-4.5 rounded text-event-pink accent-event-pink border-stone-300 focus:ring-event-pink cursor-pointer"
               />
               <label htmlFor="verifiedCheck" className="text-xs font-semibold text-stone-700 cursor-pointer flex items-center">
                 Only Vetted/Verified Vendors
@@ -197,7 +197,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
             <div className="bg-white rounded-3xl p-4 border border-stone-200/80 shadow-sm flex flex-col md:flex-row gap-4 items-center justify-between">
               
               {/* Search bar input */}
-              <div className="relative w-full md:w-80 flex items-center bg-stone-50 border border-stone-200 rounded-2xl px-3 py-1.5 focus-within:border-rose-gold transition-colors">
+              <div className="relative w-full md:w-80 flex items-center bg-stone-50 border border-stone-200 rounded-2xl px-3 py-1.5 focus-within:border-event-pink transition-colors">
                 <FiSearch className="text-stone-400 mr-2 w-5 h-5 flex-shrink-0" />
                 <input
                   type="text"
@@ -214,7 +214,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                 <select
                   value={sortBy}
                   onChange={(e) => setSortBy(e.target.value)}
-                  className="px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-xl text-xs font-bold outline-none cursor-pointer text-stone-700 focus:border-rose-gold"
+                  className="px-3 py-1.5 bg-stone-50 border border-stone-200 rounded-xl text-xs font-bold outline-none cursor-pointer text-stone-700 focus:border-event-pink"
                 >
                   <option value="popular">Popularity</option>
                   <option value="rating">Rating (Highest)</option>
@@ -237,7 +237,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                   <p className="text-stone-400 text-xs mb-6">Try broadening your search term or adjusting filters.</p>
                   <button
                     onClick={handleClearAll}
-                    className="px-6 py-2.5 bg-burgundy text-white rounded-full text-xs font-bold hover:bg-stone-900 transition-colors cursor-pointer"
+                    className="px-6 py-2.5 bg-gradient-to-r from-event-pink to-event-orange text-white rounded-full text-xs font-bold hover:brightness-110 transition-colors cursor-pointer"
                   >
                     Reset Filters
                   </button>
@@ -257,7 +257,7 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                         animate={{ opacity: 1, scale: 1 }}
                         exit={{ opacity: 0, scale: 0.95 }}
                         transition={{ duration: 0.4 }}
-                        className="group bg-white rounded-3xl overflow-hidden border border-stone-200 hover:border-rose-gold/45 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col"
+                        className="group bg-white rounded-3xl overflow-hidden border border-stone-200 hover:border-event-pink/40 shadow-sm hover:shadow-xl transition-all duration-500 flex flex-col"
                       >
                         {/* Image banner */}
                         <div className="relative h-56 overflow-hidden">
@@ -267,19 +267,27 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                           />
                           <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60" />
 
+                          {/* Super Vendor Badge */}
+                          {vendor.verified && (
+                            <span className="absolute top-4 left-4 bg-gradient-to-r from-amber-500 to-amber-600 text-white text-[9px] font-extrabold px-2.5 py-1 rounded-md shadow-md uppercase tracking-wider flex items-center space-x-1 z-10">
+                              <FiStar className="w-2.5 h-2.5 fill-current" />
+                              <span>Super Vendor</span>
+                            </span>
+                          )}
+
                           {/* Heart wishlist */}
                           <button
                             onClick={() => toggleWishlist(vendor.id)}
                             className={`absolute top-4 right-4 p-2 rounded-full backdrop-blur-md transition-all duration-300 cursor-pointer ${
                               isWishlisted
-                                ? 'bg-burgundy text-[#FAF9F6] scale-110'
-                                : 'bg-black/35 text-white hover:bg-white hover:text-burgundy'
+                                ? 'bg-event-pink text-white scale-110 animate-pulse'
+                                : 'bg-black/35 text-white hover:bg-white hover:text-event-pink'
                             }`}
                           >
                             <FiHeart className={`w-5 h-5 ${isWishlisted ? 'fill-current' : ''}`} />
                           </button>
 
-                          <span className="absolute bottom-4 left-4 bg-white/95 text-burgundy text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-sm">
+                          <span className="absolute bottom-4 left-4 bg-white/95 text-event-pink text-[9px] font-extrabold uppercase tracking-widest px-2.5 py-1 rounded-full shadow-sm">
                             {vendor.category}
                           </span>
                         </div>
@@ -289,18 +297,21 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                           <div>
                             <div className="flex items-center justify-between mb-2">
                               <span className="text-xs text-stone-500 font-semibold flex items-center">
-                                <FiMapPin className="text-rose-gold mr-1" /> {vendor.location}
+                                <FiMapPin className="text-event-pink mr-1" /> {vendor.location}
                               </span>
                               
-                              <div className="flex items-center space-x-1 bg-champagne/30 px-2 py-0.5 rounded-lg border border-champagne/50">
-                                <FiStar className="w-3 h-3 text-gold-accent fill-current" />
-                                <span className="text-xs text-stone-800 font-bold">{vendor.rating}</span>
-                                <span className="text-[10px] text-stone-500">({vendor.reviews})</span>
+                              {/* Rating & Review */}
+                              <div className="flex items-center space-x-2">
+                                <div className="flex items-center space-x-1 bg-emerald-600 text-white px-2 py-0.5 rounded-md font-bold text-xs shadow-sm">
+                                  <FiStar className="w-3 h-3 fill-current text-white" />
+                                  <span>{vendor.rating}</span>
+                                </div>
+                                <span className="text-[11px] text-stone-500 font-semibold">{vendor.reviews} reviews</span>
                               </div>
                             </div>
 
                             <div className="flex items-center space-x-2 mb-3">
-                              <h3 className="font-serif text-lg font-bold text-stone-900 group-hover:text-burgundy transition-colors duration-300">
+                              <h3 className="font-serif text-lg font-bold text-stone-900 group-hover:text-event-pink transition-colors duration-300">
                                 {vendor.name}
                               </h3>
                               {vendor.verified && (
@@ -314,11 +325,11 @@ const Vendors = ({ selectedCategory, selectedLocation, wishlist, toggleWishlist,
                           <div className="flex items-center justify-between pt-4 border-t border-stone-100 mt-4">
                             <div>
                               <p className="text-[9px] text-stone-400 uppercase tracking-widest font-semibold">Starting Price</p>
-                              <p className="text-burgundy font-bold text-sm">{vendor.price}</p>
+                              <p className="text-event-pink font-bold text-sm">{vendor.price}</p>
                             </div>
                             <button
                               onClick={() => alert(`Quote request sent to ${vendor.name}!`)}
-                              className="px-4 py-2 bg-[#7B2D26] hover:bg-stone-900 text-white font-bold text-xs rounded-xl transition-colors duration-300 cursor-pointer"
+                              className="px-4 py-2 bg-gradient-to-r from-event-pink to-event-orange text-white font-bold text-xs rounded-xl transition-colors duration-300 cursor-pointer hover:brightness-110"
                             >
                               Request Quote
                             </button>

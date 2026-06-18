@@ -5,59 +5,87 @@ import { FiBookmark, FiHeart, FiShare2, FiGrid, FiSmile } from 'react-icons/fi';
 const galleryItems = [
   {
     id: 1,
-    title: 'Royalty Bridal Portrait',
-    tag: 'Bridal Looks',
+    title: 'Royalty Wedding Portrait',
+    tag: 'Attire',
     image: 'https://images.unsplash.com/photo-1583939003579-730e3918a45a?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[3/4]',
   },
   {
     id: 2,
     title: 'Marigold Palace Decor',
-    tag: 'Mandap',
+    tag: 'Stage Decor',
     image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[3/2]',
   },
   {
     id: 3,
     title: 'Floral Detail Arrangement',
-    tag: 'Mehendi',
+    tag: 'Table Setup',
     image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[4/5]',
   },
   {
     id: 4,
-    title: 'Traditional Table Setups',
-    tag: 'Haldi',
+    title: 'Corporate Dinner Layout',
+    tag: 'Table Setup',
     image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[3/4]',
   },
   {
     id: 5,
-    title: 'Glasshouse Reception Canopy',
-    tag: 'Reception',
+    title: 'Glasshouse Glow Canopy',
+    tag: 'Lighting',
     image: 'https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[16/9]',
   },
   {
     id: 6,
-    title: 'Luxury Floral Mandap',
-    tag: 'Mandap',
-    image: 'https://images.unsplash.com/photo-1511285560929-80b456fea0bc?auto=format&fit=crop&w=600&q=80',
+    title: 'Futuristic Tech Projection',
+    tag: 'Lighting',
+    image: 'https://images.unsplash.com/photo-1511578314322-379afb476865?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[3/4]',
   },
   {
     id: 7,
-    title: 'Pastel Bridal Jewelry Set',
-    tag: 'Bridal Looks',
-    image: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=600&q=80',
+    title: 'Gatsby Gold Centerpiece',
+    tag: 'Stage Decor',
+    image: 'https://images.unsplash.com/photo-1530103862676-de8c9debad1d?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[4/5]',
   },
   {
     id: 8,
-    title: 'Classic Bridal Lehenga Couture',
-    tag: 'Bridal Looks',
+    title: 'Classic Party Sherwani',
+    tag: 'Attire',
     image: 'https://images.unsplash.com/photo-1607190074257-dd4b7af0309f?auto=format&fit=crop&w=600&q=80',
     aspect: 'aspect-[3/2]',
+  },
+  {
+    id: 9,
+    title: 'Festival Street Food Park',
+    tag: 'Table Setup',
+    image: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=600&q=80',
+    aspect: 'aspect-[16/9]',
+  },
+  {
+    id: 10,
+    title: 'Neon Concert Laser Show',
+    tag: 'Lighting',
+    image: 'https://images.unsplash.com/photo-1506157786151-b8491531f063?auto=format&fit=crop&w=600&q=80',
+    aspect: 'aspect-[3/4]',
+  },
+  {
+    id: 11,
+    title: 'Modern Art Vernissage Gallery',
+    tag: 'Stage Decor',
+    image: 'https://images.unsplash.com/photo-1460661419201-fd4cecdf8a8b?auto=format&fit=crop&w=600&q=80',
+    aspect: 'aspect-[3/2]',
+  },
+  {
+    id: 12,
+    title: 'Graduation Convocation Attire',
+    tag: 'Attire',
+    image: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?auto=format&fit=crop&w=600&q=80',
+    aspect: 'aspect-[4/5]',
   },
 ];
 
@@ -66,7 +94,7 @@ const InspirationGallery = () => {
   const [savedItems, setSavedItems] = useState([]);
   const [sharingItem, setSharingItem] = useState(null);
 
-  const tags = ['All', 'Bridal Looks', 'Decor', 'Mehendi', 'Haldi', 'Reception', 'Mandap'];
+  const tags = ['All', 'Attire', 'Stage Decor', 'Table Setup', 'Lighting'];
 
   const toggleSave = (id) => {
     if (savedItems.includes(id)) {
@@ -85,24 +113,23 @@ const InspirationGallery = () => {
 
   const filteredItems = galleryItems.filter(item => {
     if (selectedTag === 'All') return true;
-    if (selectedTag === 'Decor') return item.tag === 'Mandap' || item.tag === 'Reception';
     return item.tag === selectedTag;
   });
 
   return (
-    <section id="gallery-section" className="py-24 bg-[#FAF9F6] border-t border-rose-gold/15 relative">
+    <section id="gallery-section" className="py-24 bg-[#FAF9F6] border-t border-event-pink/15 relative">
       <div className="max-w-7xl mx-auto px-6 lg:px-12">
         {/* Header Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-burgundy font-semibold uppercase tracking-widest text-xs lg:text-sm">
+          <span className="text-event-pink font-semibold uppercase tracking-widest text-xs lg:text-sm">
             Pinterest Board Look
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-stone-900 mt-3 mb-4">
-            Wedding Inspiration Gallery
+            Event Inspiration Gallery
           </h2>
-          <div className="h-1 w-20 bg-rose-gold mx-auto mb-6 rounded-full" />
+          <div className="h-1 w-20 bg-gradient-to-r from-event-pink to-event-orange mx-auto mb-6 rounded-full" />
           <p className="text-stone-600 font-light text-sm md:text-base leading-relaxed">
-            Curate and pin your favorite styles. Tap on save to add bridal wear silhouettes, setups, and mehendi arts directly to your mood board.
+            Curate and pin your favorite styles. Tap save to add attire styling, table setups, and stage layouts directly to your mood board.
           </p>
         </div>
 
@@ -114,8 +141,8 @@ const InspirationGallery = () => {
               onClick={() => setSelectedTag(tag)}
               className={`px-5 py-2.5 rounded-full text-xs font-semibold tracking-wider transition-all duration-300 cursor-pointer ${
                 selectedTag === tag
-                  ? 'bg-burgundy text-white shadow-lg'
-                  : 'bg-white text-stone-600 border border-stone-200 hover:border-rose-gold hover:text-burgundy'
+                  ? 'bg-gradient-to-r from-event-pink to-event-orange text-white shadow-lg'
+                  : 'bg-white text-stone-600 border border-stone-200 hover:border-event-pink hover:text-event-pink'
               }`}
             >
               {tag}
@@ -132,7 +159,7 @@ const InspirationGallery = () => {
               exit={{ opacity: 0, y: 50 }}
               className="fixed bottom-6 left-6 z-50 bg-stone-900 text-white text-xs font-semibold px-4 py-3 rounded-xl shadow-2xl flex items-center space-x-2 border border-white/10"
             >
-              <FiShare2 className="text-rose-gold animate-bounce" />
+              <FiShare2 className="text-event-pink animate-bounce" />
               <span>Link to "{sharingItem}" copied to clipboard!</span>
             </motion.div>
           )}
@@ -174,7 +201,7 @@ const InspirationGallery = () => {
                         e.stopPropagation();
                         handleShare(item.title);
                       }}
-                      className="p-2 bg-white/20 backdrop-blur-md hover:bg-white hover:text-burgundy rounded-full transition-colors duration-300 text-white cursor-pointer"
+                      className="p-2 bg-white/20 backdrop-blur-md hover:bg-white hover:text-event-pink rounded-full transition-colors duration-300 text-white cursor-pointer"
                       title="Share Pin"
                     >
                       <FiShare2 className="w-4 h-4" />
@@ -186,8 +213,8 @@ const InspirationGallery = () => {
                       }}
                       className={`px-4 py-1.5 rounded-full text-xs font-bold transition-all duration-300 flex items-center space-x-1 shadow-md cursor-pointer ${
                         isSaved
-                          ? 'bg-burgundy text-[#FAF9F6]'
-                          : 'bg-white text-stone-900 hover:bg-rose-gold hover:text-white'
+                          ? 'bg-event-pink text-white'
+                          : 'bg-white text-stone-900 hover:bg-event-orange hover:text-white'
                       }`}
                     >
                       <FiBookmark className={`w-3.5 h-3.5 ${isSaved ? 'fill-current' : ''}`} />
@@ -202,7 +229,7 @@ const InspirationGallery = () => {
                     {item.title}
                   </h3>
                   <p className="text-champagne text-[11px] font-medium tracking-wide mt-1 uppercase">
-                    ShaadiVerse Mood Board
+                    EventVerse Mood Board
                   </p>
                 </div>
               </motion.div>

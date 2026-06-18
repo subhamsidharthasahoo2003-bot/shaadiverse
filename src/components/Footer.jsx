@@ -17,18 +17,18 @@ const Footer = ({ onSelectCategory }) => {
     }, 3000);
   };
 
-  const categories = ['Wedding Venues', 'Photographers', 'Makeup Artists', 'Wedding Planners', 'Decorators'];
+  const categories = ['Event Venues', 'Photographers', 'Makeup Artists', 'Event Planners', 'Decorators'];
   const links = [
     { name: 'About Us', path: '/' },
     { name: 'Inspiration Hub', path: '/inspiration' },
-    { name: 'Wedding Planners', path: '/vendors' },
-    { name: 'Couple Stories', path: '/stories' },
+    { name: 'Event Planners', path: '/vendors' },
+    { name: 'Event Stories', path: '/stories' },
     { name: 'Planning Tools', path: '/planner' }
   ];
   const blogs = [
-    { title: 'Choosing Your Udaipur Venue', url: '#' },
-    { title: 'Haldi Outfits Guide 2026', url: '#' },
-    { title: 'Photographer Negotiation Tips', url: '#' },
+    { title: 'Choosing Your Perfect Venue', url: '#' },
+    { title: 'Corporate Event Theme Ideas', url: '#' },
+    { title: 'Negotiating with Vendors', url: '#' },
   ];
 
   return (
@@ -39,28 +39,28 @@ const Footer = ({ onSelectCategory }) => {
         <div className="lg:col-span-2 text-left">
           <Link to="/" className="flex items-center space-x-2 mb-6">
             <span className="font-serif text-2xl lg:text-3xl font-bold tracking-wide text-white">
-              Shaadi<span className="text-rose-gold">Verse</span>
+              Event<span className="bg-gradient-to-r from-event-pink to-event-orange bg-clip-text text-transparent">Verse</span>
             </span>
           </Link>
           <p className="text-stone-400 text-sm leading-relaxed font-light mb-6 max-w-sm">
-            ShaadiVerse is the country’s leading premium wedding planning marketplace. We connect couples with curated, verified designers, high-end venues, and award-winning artists to construct dream celebrations.
+            EventVerse is the country’s leading premium events planning marketplace. We connect event hosts with curated, verified designers, high-end venues, and award-winning artists to construct dream celebrations.
           </p>
           
           {/* Social Icons */}
           <div className="flex items-center space-x-4">
-            <a href="#" className="p-2.5 bg-white/5 hover:bg-[#E8B4B8] hover:text-burgundy rounded-full text-stone-300 transition-all duration-300">
+            <a href="#" className="p-2.5 bg-white/5 hover:bg-event-pink hover:text-white rounded-full text-stone-300 transition-all duration-300">
               <FiInstagram className="w-4.5 h-4.5" />
             </a>
-            <a href="#" className="p-2.5 bg-white/5 hover:bg-[#E8B4B8] hover:text-burgundy rounded-full text-stone-300 transition-all duration-300">
+            <a href="#" className="p-2.5 bg-white/5 hover:bg-event-pink hover:text-white rounded-full text-stone-300 transition-all duration-300">
               <FaPinterestP className="w-4.5 h-4.5" />
             </a>
-            <a href="#" className="p-2.5 bg-white/5 hover:bg-[#E8B4B8] hover:text-burgundy rounded-full text-stone-300 transition-all duration-300">
+            <a href="#" className="p-2.5 bg-white/5 hover:bg-event-pink hover:text-white rounded-full text-stone-300 transition-all duration-300">
               <FiFacebook className="w-4.5 h-4.5" />
             </a>
-            <a href="#" className="p-2.5 bg-white/5 hover:bg-[#E8B4B8] hover:text-burgundy rounded-full text-stone-300 transition-all duration-300">
+            <a href="#" className="p-2.5 bg-white/5 hover:bg-event-pink hover:text-white rounded-full text-stone-300 transition-all duration-300">
               <FiTwitter className="w-4.5 h-4.5" />
             </a>
-            <a href="#" className="p-2.5 bg-white/5 hover:bg-[#E8B4B8] hover:text-burgundy rounded-full text-stone-300 transition-all duration-300">
+            <a href="#" className="p-2.5 bg-white/5 hover:bg-event-pink hover:text-white rounded-full text-stone-300 transition-all duration-300">
               <FiYoutube className="w-4.5 h-4.5" />
             </a>
           </div>
@@ -77,7 +77,7 @@ const Footer = ({ onSelectCategory }) => {
                 <Link
                   to="/vendors"
                   onClick={() => onSelectCategory(cat)}
-                  className="text-sm hover:text-rose-gold transition-colors duration-200"
+                  className="text-sm hover:text-event-pink transition-colors duration-200"
                 >
                   {cat}
                 </Link>
@@ -94,7 +94,7 @@ const Footer = ({ onSelectCategory }) => {
           <ul className="space-y-3">
             {links.map((link) => (
               <li key={link.name}>
-                <Link to={link.path} className="text-sm hover:text-rose-gold transition-colors duration-200">
+                <Link to={link.path} className="text-sm hover:text-event-pink transition-colors duration-200">
                   {link.name}
                 </Link>
               </li>
@@ -110,7 +110,7 @@ const Footer = ({ onSelectCategory }) => {
           <ul className="space-y-3 mb-6">
             {blogs.map((b, idx) => (
               <li key={idx}>
-                <a href={b.url} className="text-sm hover:text-rose-gold transition-colors duration-200 line-clamp-1">
+                <a href={b.url} className="text-sm hover:text-event-pink transition-colors duration-200 line-clamp-1">
                   {b.title}
                 </a>
               </li>
@@ -120,7 +120,7 @@ const Footer = ({ onSelectCategory }) => {
           <h4 className="font-serif text-white font-bold text-xs uppercase tracking-wider mb-3">
             Newsletter Signup
           </h4>
-          <form onSubmit={handleSubscribe} className="relative flex items-center bg-white/5 rounded-xl border border-white/10 p-1.5 focus-within:border-rose-gold/60 transition-colors">
+          <form onSubmit={handleSubscribe} className="relative flex items-center bg-white/5 rounded-xl border border-white/10 p-1.5 focus-within:border-event-pink/60 transition-colors">
             <FiMail className="text-stone-500 ml-2.5 w-4.5 h-4.5 flex-shrink-0" />
             <input
               type="email"
@@ -132,7 +132,7 @@ const Footer = ({ onSelectCategory }) => {
             />
             <button
               type="submit"
-              className="bg-burgundy text-white hover:bg-stone-900 transition-colors p-2 rounded-lg cursor-pointer"
+              className="bg-gradient-to-r from-event-pink to-event-orange text-white hover:brightness-110 transition-all p-2 rounded-lg cursor-pointer flex items-center justify-center"
               title="Subscribe"
             >
               {subscribed ? <FiCheck className="w-4 h-4 text-emerald-400" /> : <FiSend className="w-4 h-4" />}
@@ -148,7 +148,7 @@ const Footer = ({ onSelectCategory }) => {
 
       {/* Copyright Footer details */}
       <div className="max-w-7xl mx-auto px-6 lg:px-12 pt-8 flex flex-col sm:flex-row items-center justify-between text-xs font-medium text-stone-500">
-        <p>&copy; 2026 ShaadiVerse Inc. All Rights Reserved. Designed by Antigravity.</p>
+        <p>&copy; 2026 EventVerse Inc. All Rights Reserved. Designed by Antigravity.</p>
         <div className="flex items-center space-x-6 mt-4 sm:mt-0">
           <a href="#" className="hover:text-stone-300">Privacy Policy</a>
           <a href="#" className="hover:text-stone-300">Terms of Service</a>

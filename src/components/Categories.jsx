@@ -4,7 +4,7 @@ import { motion } from 'framer-motion';
 const Categories = ({ onSelectCategory }) => {
   const categoriesList = [
     {
-      name: 'Wedding Venues',
+      name: 'Event Venues',
       count: '1,840+ Properties',
       image: 'https://images.unsplash.com/photo-1519167758481-83f550bb49b3?auto=format&fit=crop&w=800&q=80',
     },
@@ -19,7 +19,7 @@ const Categories = ({ onSelectCategory }) => {
       image: 'https://images.unsplash.com/photo-1487412720507-e7ab37603c6f?auto=format&fit=crop&w=800&q=80',
     },
     {
-      name: 'Wedding Planners',
+      name: 'Event Planners',
       count: '430+ Agencies',
       image: 'https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=800&q=80',
     },
@@ -29,9 +29,9 @@ const Categories = ({ onSelectCategory }) => {
       image: 'https://images.unsplash.com/photo-1522673607200-164d1b6ce486?auto=format&fit=crop&w=800&q=80',
     },
     {
-      name: 'Mehendi Artists',
-      count: '340+ Specialists',
-      image: 'https://images.unsplash.com/photo-1590075865003-e48277faa558?auto=format&fit=crop&w=800&q=80',
+      name: 'Entertainment & DJs',
+      count: '490+ Bands & DJs',
+      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80',
     },
     {
       name: 'Caterers',
@@ -39,14 +39,9 @@ const Categories = ({ onSelectCategory }) => {
       image: 'https://images.unsplash.com/photo-1555244162-803834f70033?auto=format&fit=crop&w=800&q=80',
     },
     {
-      name: 'Bridal Wear',
+      name: 'Formal & Party Wear',
       count: '820+ Couturiers',
       image: 'https://images.unsplash.com/photo-1594552072238-b8a33785b261?auto=format&fit=crop&w=800&q=80',
-    },
-    {
-      name: 'Entertainment',
-      count: '490+ Bands & DJs',
-      image: 'https://images.unsplash.com/photo-1516450360452-9312f5e86fc7?auto=format&fit=crop&w=800&q=80',
     },
     {
       name: 'Invitation Designers',
@@ -58,21 +53,21 @@ const Categories = ({ onSelectCategory }) => {
   return (
     <section id="categories-section" className="py-24 bg-[#FAF9F6] relative">
       {/* Decorative floral backgrounds */}
-      <div className="absolute top-0 left-0 w-48 h-48 bg-radial from-rose-gold/10 to-transparent pointer-events-none" />
-      <div className="absolute bottom-0 right-0 w-64 h-64 bg-radial from-champagne/20 to-transparent pointer-events-none" />
+      <div className="absolute top-0 left-0 w-48 h-48 bg-radial from-event-pink/10 to-transparent pointer-events-none" />
+      <div className="absolute bottom-0 right-0 w-64 h-64 bg-radial from-event-orange/15 to-transparent pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative">
         {/* Header Title */}
         <div className="text-center max-w-2xl mx-auto mb-16">
-          <span className="text-burgundy font-semibold uppercase tracking-widest text-xs lg:text-sm">
+          <span className="text-event-pink font-semibold uppercase tracking-widest text-xs lg:text-sm">
             Curated Showcase
           </span>
           <h2 className="font-serif text-3xl md:text-5xl font-bold text-stone-900 mt-3 mb-4">
-            Browse By Wedding Category
+            Browse By Event Category
           </h2>
-          <div className="h-1 w-20 bg-rose-gold mx-auto mb-6 rounded-full" />
+          <div className="h-1 w-20 bg-gradient-to-r from-event-pink to-event-orange mx-auto mb-6 rounded-full" />
           <p className="text-stone-600 font-light text-sm md:text-base leading-relaxed">
-            From palace grounds to artistic photography, select from our top categories to find verified professionals matched to your budget.
+            From palace grounds to corporate setups, select from our top categories to find verified professionals matched to your budget.
           </p>
         </div>
 
@@ -97,19 +92,19 @@ const Categories = ({ onSelectCategory }) => {
                 style={{ backgroundImage: `url('${cat.image}')` }}
               />
               {/* Overlay styling (Rose gold to burgundy gradient shift on hover) */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10 transition-colors duration-500 group-hover:from-burgundy/80 group-hover:via-black/45" />
+              <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/35 to-black/10 transition-colors duration-500 group-hover:from-event-pink/80 group-hover:via-black/45" />
 
               {/* Text Info */}
               <div className="absolute inset-x-0 bottom-0 p-4 z-10 flex flex-col justify-end h-full">
                 <span className="text-[10px] text-champagne uppercase font-bold tracking-widest mb-1">
                   {cat.count}
                 </span>
-                <h3 className="text-white font-serif text-base sm:text-lg font-bold group-hover:text-rose-gold transition-colors duration-300">
+                <h3 className="text-white font-serif text-base sm:text-lg font-bold group-hover:text-event-orange transition-colors duration-300">
                   {cat.name}
                 </h3>
                 
                 {/* Micro-interaction detail: line slides open on hover */}
-                <div className="w-0 group-hover:w-12 h-[2px] bg-rose-gold transition-all duration-300 mt-2" />
+                <div className="w-0 group-hover:w-12 h-[2px] bg-event-orange transition-all duration-300 mt-2" />
               </div>
             </motion.div>
           ))}

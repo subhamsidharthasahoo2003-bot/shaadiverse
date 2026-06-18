@@ -1,11 +1,12 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import Hero from '../components/Hero';
+import QuickCategories from '../components/QuickCategories';
 import Categories from '../components/Categories';
 import Stats from '../components/Stats';
 import FeaturedVendors from '../components/FeaturedVendors';
 import InspirationGallery from '../components/InspirationGallery';
-import RealWeddings from '../components/RealWeddings';
+import RealEvents from '../components/RealWeddings';
 import WhyChooseUs from '../components/WhyChooseUs';
 import Testimonials from '../components/Testimonials';
 import MobileApp from '../components/MobileApp';
@@ -32,6 +33,7 @@ const Home = ({ wishlist, toggleWishlist, onSelectCategory, onSelectLocation }) 
         onSearch={handleHeroSearch}
         onStartPlanning={() => navigate('/planner')}
       />
+      <QuickCategories onSelectCategory={handleCategorySelect} />
       <Categories onSelectCategory={handleCategorySelect} />
       <Stats />
       
@@ -44,6 +46,8 @@ const Home = ({ wishlist, toggleWishlist, onSelectCategory, onSelectLocation }) 
         onSelectCategory={onSelectCategory}
         onSelectLocation={onSelectLocation}
       />
+      
+      <RealEvents />
       
       <WhyChooseUs />
       <Testimonials />

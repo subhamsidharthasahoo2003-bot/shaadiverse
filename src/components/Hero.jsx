@@ -7,17 +7,16 @@ const Hero = ({ onSearch, onStartPlanning }) => {
   const [selectedLocation, setSelectedLocation] = useState('');
   const [selectedCategory, setSelectedCategory] = useState('');
 
-  const locations = ['Udaipur', 'Jaipur', 'Mumbai', 'Delhi NCR', 'Bangalore', 'Goa'];
+  const locations = ['Bhubaneswar', 'Udaipur', 'Jaipur', 'Mumbai', 'Delhi NCR', 'Bangalore', 'Goa'];
   const categories = [
-    'Wedding Venues',
+    'Event Venues',
     'Photographers',
     'Makeup Artists',
-    'Wedding Planners',
+    'Event Planners',
     'Decorators',
-    'Mehendi Artists',
+    'Entertainment & DJs',
     'Caterers',
-    'Bridal Wear',
-    'Entertainment',
+    'Formal & Party Wear',
     'Invitation Designers'
   ];
 
@@ -32,7 +31,7 @@ const Hero = ({ onSearch, onStartPlanning }) => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat transition-transform duration-1000 scale-105"
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1519741497674-611481863552?auto=format&fit=crop&w=1920&q=80')` 
+          backgroundImage: `url('https://images.unsplash.com/photo-1511795409834-ef04bbd61622?auto=format&fit=crop&w=1920&q=80')` 
         }}
       />
       <div className="absolute inset-0 bg-gradient-to-r from-black/75 via-black/45 to-transparent z-10" />
@@ -45,7 +44,7 @@ const Hero = ({ onSearch, onStartPlanning }) => {
         className="absolute top-1/4 left-10 z-20 pointer-events-none hidden md:block"
       >
         <div className="glass-card-dark bg-white/10 backdrop-blur-md border-white/20 p-4 rounded-2xl flex items-center space-x-3 text-white shadow-xl">
-          <HiSparkles className="text-gold-accent w-6 h-6 animate-pulse" />
+          <HiSparkles className="text-event-pink w-6 h-6 animate-pulse" />
           <div>
             <p className="text-[10px] text-stone-200 uppercase tracking-widest">Premium Planners</p>
             <p className="text-sm font-semibold">100% Curated Luxury</p>
@@ -58,9 +57,9 @@ const Hero = ({ onSearch, onStartPlanning }) => {
         transition={{ duration: 8, repeat: Infinity, ease: 'easeInOut', delay: 1 }}
         className="absolute bottom-1/4 right-16 z-20 pointer-events-none hidden lg:block"
       >
-        <div className="glass-card bg-[#FAF9F6]/85 p-4 rounded-2xl flex items-center space-x-3 text-stone-800 shadow-2xl border-rose-gold/30">
-          <div className="w-10 h-10 rounded-full bg-rose-gold/20 flex items-center justify-center">
-            <FiHeart className="text-burgundy w-5.5 h-5.5" />
+        <div className="glass-card bg-[#FAF9F6]/85 p-4 rounded-2xl flex items-center space-x-3 text-stone-800 shadow-2xl border-event-pink/30">
+          <div className="w-10 h-10 rounded-full bg-event-pink/20 flex items-center justify-center">
+            <FiHeart className="text-event-pink w-5.5 h-5.5" />
           </div>
           <div>
             <p className="text-[10px] text-stone-500 uppercase tracking-wider">Dream Venues</p>
@@ -77,17 +76,17 @@ const Hero = ({ onSearch, onStartPlanning }) => {
           transition={{ duration: 0.8 }}
           className="max-w-4xl"
         >
-          <span className="text-gold-accent tracking-[0.2em] text-xs lg:text-sm font-bold uppercase mb-4 block animate-pulse">
-            Introducing ShaadiVerse Marketplace
+          <span className="text-event-orange tracking-[0.2em] text-xs lg:text-sm font-bold uppercase mb-4 block animate-pulse">
+            Introducing EventVerse Marketplace
           </span>
           <h1 className="font-serif text-4xl sm:text-5xl md:text-7xl font-bold text-white leading-[1.1] mb-6">
-            Plan Your Dream Wedding <br />
-            <span className="text-stroke font-normal italic bg-gradient-to-r from-rose-gold via-champagne to-gold-accent bg-clip-text text-transparent">
+            Plan Your Dream Event <br />
+            <span className="text-stroke font-normal italic bg-gradient-to-r from-event-pink via-rose-gold to-event-orange bg-clip-text text-transparent">
               Effortlessly
             </span>
           </h1>
           <p className="text-white/80 text-base md:text-xl font-light tracking-wide max-w-2xl mx-auto mb-10">
-            Discover and book the country's finest wedding venues, hand-picked bridal designers, couture makeup artists, and award-winning planners.
+            Discover and book the country's finest event venues, gourmet caterers, expert designers, couture stylists, and award-winning planners.
           </p>
         </motion.div>
 
@@ -96,11 +95,11 @@ const Hero = ({ onSearch, onStartPlanning }) => {
           initial={{ opacity: 0, y: 40 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.8, delay: 0.2 }}
-          className="w-full max-w-4xl bg-white/95 rounded-3xl md:rounded-full p-3 md:p-4 shadow-2xl border border-rose-gold/30 flex flex-col md:flex-row gap-3 md:items-center text-left"
+          className="w-full max-w-4xl bg-white/95 rounded-3xl md:rounded-full p-3 md:p-4 shadow-2xl border border-event-pink/20 flex flex-col md:flex-row gap-3 md:items-center text-left"
         >
           {/* Location Input */}
           <div className="flex-1 flex items-center px-4 py-2 border-b md:border-b-0 md:border-r border-stone-200">
-            <FiMapPin className="text-rose-gold w-5.5 h-5.5 mr-3 flex-shrink-0" />
+            <FiMapPin className="text-event-pink w-5.5 h-5.5 mr-3 flex-shrink-0" />
             <div className="w-full">
               <label className="block text-[10px] uppercase font-bold text-stone-500 tracking-wider">Where</label>
               <select
@@ -118,7 +117,7 @@ const Hero = ({ onSearch, onStartPlanning }) => {
 
           {/* Vendor Category Input */}
           <div className="flex-1 flex items-center px-4 py-2">
-            <FiSliders className="text-rose-gold w-5.5 h-5.5 mr-3 flex-shrink-0" />
+            <FiSliders className="text-event-pink w-5.5 h-5.5 mr-3 flex-shrink-0" />
             <div className="w-full">
               <label className="block text-[10px] uppercase font-bold text-stone-500 tracking-wider">Looking For</label>
               <select
@@ -137,7 +136,7 @@ const Hero = ({ onSearch, onStartPlanning }) => {
           {/* Search Action Button */}
           <button
             onClick={handleSearchSubmit}
-            className="w-full md:w-auto bg-[#7B2D26] hover:bg-stone-900 text-white font-semibold py-4 px-8 rounded-2xl md:rounded-full transition-all duration-300 shadow-md flex items-center justify-center space-x-2 cursor-pointer"
+            className="w-full md:w-auto bg-gradient-to-r from-event-pink to-event-orange hover:brightness-110 text-white font-semibold py-4 px-8 rounded-2xl md:rounded-full transition-all duration-300 shadow-md flex items-center justify-center space-x-2 cursor-pointer"
           >
             <FiSearch className="w-5 h-5" />
             <span>Search</span>
@@ -153,13 +152,13 @@ const Hero = ({ onSearch, onStartPlanning }) => {
         >
           <a
             href="#vendors-section"
-            className="w-full sm:w-auto px-8 py-3.5 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-burgundy transition-all duration-300 cursor-pointer text-sm"
+            className="w-full sm:w-auto px-8 py-3.5 border-2 border-white text-white font-semibold rounded-full hover:bg-white hover:text-event-pink transition-all duration-300 cursor-pointer text-sm"
           >
             Find Vendors
           </a>
           <button
             onClick={onStartPlanning}
-            className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-[#D4AF37] to-[#E8B4B8] hover:from-[#E8B4B8] hover:to-[#D4AF37] text-burgundy font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer text-sm"
+            className="w-full sm:w-auto px-8 py-3.5 bg-gradient-to-r from-event-pink to-event-orange hover:brightness-110 text-white font-bold rounded-full shadow-lg hover:shadow-xl transition-all duration-300 cursor-pointer text-sm"
           >
             Start Planning
           </button>

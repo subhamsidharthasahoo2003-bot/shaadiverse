@@ -39,7 +39,7 @@ const StatCounter = ({ value, suffix, label, delay = 0 }) => {
         className="text-4xl md:text-5xl lg:text-6xl font-serif font-bold text-champagne mb-2 flex items-center"
       >
         <span>{count}</span>
-        <span className="text-rose-gold ml-1">{suffix}</span>
+        <span className="text-event-orange ml-1">{suffix}</span>
       </motion.div>
       <motion.p
         initial={{ opacity: 0 }}
@@ -56,16 +56,16 @@ const StatCounter = ({ value, suffix, label, delay = 0 }) => {
 const Stats = () => {
   const statsList = [
     { value: '50', suffix: 'K+', label: 'Verified Vendors' },
-    { value: '100', suffix: 'K+', label: 'Weddings Planned' },
-    { value: '5', suffix: 'M+', label: 'Inspiration Photos' },
-    { value: '1', suffix: 'M+', label: 'Happy Couples' },
+    { value: '100', suffix: 'K+', label: 'Events Planned' },
+    { value: '5', suffix: 'M+', label: 'Inspiration Ideas' },
+    { value: '1', suffix: 'M+', label: 'Happy Clients' },
   ];
 
   return (
-    <section className="relative py-20 bg-burgundy overflow-hidden">
-      {/* Subtle gold circles overlay */}
-      <div className="absolute top-0 right-0 w-80 h-80 bg-gradient-to-br from-gold-accent/10 to-transparent rounded-full blur-3xl pointer-events-none" />
-      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-gradient-to-tr from-rose-gold/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+    <section className="relative py-20 bg-stone-950 overflow-hidden border-y border-event-pink/10">
+      {/* Subtle pink and orange glow overlay */}
+      <div className="absolute top-0 right-0 w-80 h-80 bg-radial from-event-pink/10 to-transparent rounded-full blur-3xl pointer-events-none" />
+      <div className="absolute -bottom-20 -left-20 w-80 h-80 bg-radial from-event-orange/10 to-transparent rounded-full blur-3xl pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-12 relative z-10">
         <div className="glass-card-dark bg-white/5 border-white/10 rounded-3xl grid grid-cols-2 md:grid-cols-4 gap-6 p-8 lg:p-12 shadow-2xl">

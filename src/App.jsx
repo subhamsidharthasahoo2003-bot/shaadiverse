@@ -51,7 +51,7 @@ function App() {
 
   return (
     <Router>
-      <div className="relative min-h-screen bg-[#FAF9F6] text-stone-800 font-sans flex flex-col justify-between selection:bg-[#E8B4B8]/30 selection:text-[#7B2D26]">
+      <div className="relative min-h-screen bg-[#FAF9F6] text-stone-800 font-sans flex flex-col justify-between selection:bg-event-pink/20 selection:text-event-pink">
         
         {/* Sticky top Navigation bar */}
         <Navbar
@@ -64,17 +64,17 @@ function App() {
 
         {/* Global User Authentication Success Indicator */}
         {isLoggedIn && (
-          <div className="fixed bottom-6 right-6 z-40 bg-burgundy text-[#FAF9F6] border border-gold-accent/20 px-5 py-3 rounded-2xl shadow-2xl flex items-center space-x-3">
+          <div className="fixed bottom-6 right-6 z-40 bg-gradient-to-r from-event-pink to-event-orange text-white border border-white/20 px-5 py-3 rounded-2xl shadow-2xl flex items-center space-x-3">
             <div className="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center">
               <FiCheck className="w-3.5 h-3.5" />
             </div>
             <div>
-              <p className="text-[10px] text-stone-300 uppercase tracking-widest font-semibold">Account Active</p>
+              <p className="text-[10px] text-stone-200 uppercase tracking-widest font-semibold">Account Active</p>
               <p className="text-xs font-bold">Welcome, {userName}!</p>
             </div>
             <button
               onClick={handleLogout}
-              className="text-[10px] font-bold text-gold-accent hover:underline ml-4 cursor-pointer"
+              className="text-[10px] font-bold text-white underline ml-4 cursor-pointer"
             >
               Logout
             </button>
@@ -148,9 +148,9 @@ function App() {
                 className="fixed top-0 right-0 bottom-0 w-full sm:w-[450px] bg-[#FAF9F6] shadow-2xl z-[60] flex flex-col justify-between"
               >
                 {/* Header */}
-                <div className="p-6 border-b border-rose-gold/20 flex items-center justify-between">
+                <div className="p-6 border-b border-event-pink/20 flex items-center justify-between">
                   <div className="flex items-center space-x-2">
-                    <FiHeart className="text-[#7B2D26] fill-current w-5.5 h-5.5 animate-pulse" />
+                    <FiHeart className="text-event-pink fill-current w-5.5 h-5.5 animate-pulse" />
                     <h3 className="font-serif text-xl font-bold text-stone-900">
                       Saved Vendors ({wishlist.length})
                     </h3>
@@ -177,7 +177,7 @@ function App() {
                       .map((vendor) => (
                         <div
                           key={vendor.id}
-                          className="bg-white rounded-2xl p-4 border border-stone-200 flex space-x-4 shadow-sm hover:border-rose-gold transition-colors text-left"
+                          className="bg-white rounded-2xl p-4 border border-stone-200 flex space-x-4 shadow-sm hover:border-event-pink transition-colors text-left"
                         >
                           <img
                             src={vendor.image}
@@ -186,7 +186,7 @@ function App() {
                           />
                           <div className="flex-grow flex flex-col justify-between">
                             <div>
-                              <span className="text-[9px] bg-champagne/40 text-burgundy font-bold px-2 py-0.5 rounded uppercase">
+                              <span className="text-[9px] bg-event-pink/10 text-event-pink font-bold px-2 py-0.5 rounded uppercase">
                                 {vendor.category}
                               </span>
                               <h4 className="font-serif text-sm font-bold text-stone-900 mt-1 leading-snug">
@@ -195,10 +195,10 @@ function App() {
                               <p className="text-[10px] text-stone-400 font-semibold">{vendor.location}</p>
                             </div>
                             <div className="flex items-center justify-between mt-2 pt-2 border-t border-stone-100">
-                              <span className="text-burgundy font-bold text-xs">{vendor.price}</span>
+                              <span className="text-event-pink font-bold text-xs">{vendor.price}</span>
                               <button
                                 onClick={() => toggleWishlist(vendor.id)}
-                                className="text-[10px] text-rose-gold hover:text-burgundy hover:underline font-bold cursor-pointer"
+                                className="text-[10px] text-event-pink hover:text-event-orange hover:underline font-bold cursor-pointer"
                               >
                                 Remove
                               </button>
@@ -210,13 +210,13 @@ function App() {
                 </div>
 
                 {wishlist.length > 0 && (
-                  <div className="p-6 border-t border-rose-gold/20 bg-white">
+                  <div className="p-6 border-t border-event-pink/20 bg-white">
                     <button
                       onClick={() => {
                         setIsWishlistModalOpen(false);
                         alert('Quotes requested successfully! The vendors will get back to you shortly.');
                       }}
-                      className="w-full py-3 bg-burgundy hover:bg-stone-900 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-colors cursor-pointer"
+                      className="w-full py-3 bg-gradient-to-r from-event-pink to-event-orange hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider rounded-xl shadow-lg transition-colors cursor-pointer"
                     >
                       Request Free Quotes
                     </button>
@@ -242,9 +242,9 @@ function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="fixed inset-6 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 w-full max-w-md bg-[#FAF9F6] rounded-3xl shadow-2xl p-8 z-[60] border border-rose-gold/30 text-stone-800 text-left"
+                className="fixed inset-6 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 w-full max-w-md bg-[#FAF9F6] rounded-3xl shadow-2xl p-8 z-[60] border border-event-pink/25 text-stone-800 text-left"
               >
-                <div className="flex items-center justify-between border-b border-rose-gold/15 pb-4 mb-6">
+                <div className="flex items-center justify-between border-b border-event-pink/15 pb-4 mb-6">
                   <h3 className="font-serif text-2xl font-bold text-stone-900">Sign In</h3>
                   <button
                     onClick={() => setIsLoginOpen(false)}
@@ -257,7 +257,7 @@ function App() {
                   onSubmit={(e) => {
                     e.preventDefault();
                     setIsLoggedIn(true);
-                    setUserName('Priya & Raj');
+                    setUserName('Priya Sharma');
                     setIsLoginOpen(false);
                   }}
                   className="space-y-4"
@@ -267,8 +267,8 @@ function App() {
                     <input
                       type="email"
                       required
-                      placeholder="couple@shaadi.com"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-rose-gold outline-none bg-white font-medium"
+                      placeholder="host@eventverse.com"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-event-pink outline-none bg-white font-medium"
                     />
                   </div>
                   <div>
@@ -277,12 +277,12 @@ function App() {
                       type="password"
                       required
                       placeholder="••••••••"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-rose-gold outline-none bg-white font-medium"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-event-pink outline-none bg-white font-medium"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3 bg-burgundy hover:bg-stone-900 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md mt-6 cursor-pointer"
+                    className="w-full py-3 bg-gradient-to-r from-event-pink to-event-orange hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md mt-6 cursor-pointer"
                   >
                     Sign In
                   </button>
@@ -306,9 +306,9 @@ function App() {
                 initial={{ opacity: 0, scale: 0.95 }}
                 animate={{ opacity: 1, scale: 1 }}
                 exit={{ opacity: 0, scale: 0.95 }}
-                className="fixed inset-6 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 w-full max-w-md bg-[#FAF9F6] rounded-3xl shadow-2xl p-8 z-[60] border border-rose-gold/30 text-stone-800 text-left"
+                className="fixed inset-6 sm:inset-auto sm:top-1/2 sm:left-1/2 sm:-translate-x-1/2 sm:-translate-y-1/2 w-full max-w-md bg-[#FAF9F6] rounded-3xl shadow-2xl p-8 z-[60] border border-event-pink/25 text-stone-800 text-left"
               >
-                <div className="flex items-center justify-between border-b border-rose-gold/15 pb-4 mb-6">
+                <div className="flex items-center justify-between border-b border-event-pink/15 pb-4 mb-6">
                   <h3 className="font-serif text-2xl font-bold text-stone-900">Register</h3>
                   <button
                     onClick={() => setIsRegisterOpen(false)}
@@ -321,7 +321,7 @@ function App() {
                   onSubmit={(e) => {
                     e.preventDefault();
                     setIsLoggedIn(true);
-                    setUserName('New Couple');
+                    setUserName('New Host');
                     setIsRegisterOpen(false);
                   }}
                   className="space-y-4"
@@ -332,7 +332,7 @@ function App() {
                       type="text"
                       required
                       placeholder="E.g., Priya Sharma"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-rose-gold outline-none bg-white font-medium"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-event-pink outline-none bg-white font-medium"
                     />
                   </div>
                   <div>
@@ -340,13 +340,13 @@ function App() {
                     <input
                       type="email"
                       required
-                      placeholder="couple@shaadi.com"
-                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-rose-gold outline-none bg-white font-medium"
+                      placeholder="host@eventverse.com"
+                      className="w-full px-4 py-3 rounded-xl border border-stone-200 text-sm focus:border-event-pink outline-none bg-white font-medium"
                     />
                   </div>
                   <button
                     type="submit"
-                    className="w-full py-3 bg-burgundy hover:bg-stone-900 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md mt-6 cursor-pointer"
+                    className="w-full py-3 bg-gradient-to-r from-event-pink to-event-orange hover:brightness-110 text-white font-bold text-xs uppercase tracking-wider rounded-xl transition-colors shadow-md mt-6 cursor-pointer"
                   >
                     Create Account
                   </button>
